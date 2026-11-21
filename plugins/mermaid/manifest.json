@@ -1,0 +1,9 @@
+{
+  "name": "mermaid",
+  "version": "1.0.0",
+  "description": "Mermaid diagrams on the canvas: flowcharts, sequence, state and class diagrams, themed from the design tokens.",
+  "adds": { "shapes": ["mermaid"], "panels": [], "tools": ["create_mermaid", "update_mermaid"], "dataSources": [] },
+  "requires": [],
+  "frontend": "index.tsx",
+  "test": "plugin.test.ts"
+}

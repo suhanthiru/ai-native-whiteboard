@@ -1,0 +1,9 @@
+{
+  "name": "explainer",
+  "version": "1.0.0",
+  "description": "Step-by-step visual explainers (3Blue1Brown style) from a small spec: one idea per step, labels on the objects, one shape and color per concept.",
+  "adds": { "shapes": ["explainer"], "panels": [], "tools": ["create_explainer", "explainer_step"], "dataSources": [] },
+  "requires": [],
+  "frontend": "index.tsx",
+  "test": "plugin.test.ts"
+}

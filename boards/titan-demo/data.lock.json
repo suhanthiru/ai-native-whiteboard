@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "run_01.mcap",
+      "size": 1778853,
+      "sha256": "b87907d320c7624060b86e0cccf6ac025fe1ae4ad1081b5db5d89459545ff194"
+    },
+    {
+      "path": "titan.glb",
+      "size": 408600,
+      "sha256": "e43cbd8bf8e837c8198b4a36eba93b07c444baf76f62adb92f1f7c32f1c30e5b"
+    }
+  ]
+}

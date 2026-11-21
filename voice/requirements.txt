@@ -1,0 +1,9 @@
+# Speech-to-text
+faster-whisper>=1.1
+numpy>=1.26
+# CUDA 12 runtime for faster-whisper on the GPU (CPU int8 works without these)
+nvidia-cublas-cu12
+nvidia-cudnn-cu12>=9,<10
+# Text-to-speech (also download kokoro-v1.0.onnx and voices-v1.0.bin into voice/models/)
+kokoro-onnx>=0.4
+soundfile>=0.12

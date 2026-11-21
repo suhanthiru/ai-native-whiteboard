@@ -1,0 +1,9 @@
+{
+  "name": "stream-plot",
+  "version": "1.0.0",
+  "description": "Live time plots of any numeric data-bus topic, in a glass panel that can sit next to a 3D part.",
+  "adds": { "shapes": [], "panels": ["plot"], "tools": ["show_stream_plot"], "dataSources": [] },
+  "requires": [],
+  "frontend": "index.tsx",
+  "test": "plugin.test.ts"
+}

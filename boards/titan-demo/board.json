@@ -1,0 +1,12 @@
+{
+  "name": "titan-demo",
+  "title": "Titan",
+  "aliases": ["titan", "the titan", "titan robot", "titan demo"],
+  "description": "Demo board. titan.glb is a procedural stand-in robot and run_01.mcap is SYNTHETIC sensor data, both made by `npm run make:demo`. Replace them with a real CAD export and recorded logs.",
+  "model": "data/titan.glb",
+  "enabledPlugins": [],
+  "pluginConfig": {
+    "mcap-playback": { "file": "run_01.mcap", "topicPrefix": "titan", "autoplay": false, "loop": true },
+    "sensor-viz": { "wheels": { "left_encoder": "left_wheel", "right_encoder": "right_wheel" }, "ticksPerRev": 2048, "lidarPart": "lidar" }
+  }
+}

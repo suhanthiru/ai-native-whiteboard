@@ -1,0 +1,11 @@
+{
+  "name": "mcap-playback",
+  "version": "1.0.0",
+  "description": "Plays recorded robot logs (MCAP: JSON or ROS 2 CDR messages) from the board's data/ into the data bus at the recorded timing.",
+  "adds": { "shapes": [], "panels": ["playback"], "tools": ["play", "pause", "seek", "set_rate", "status", "show_playback"], "dataSources": ["mcap"] },
+  "requires": [{ "type": "mcap", "hint": "drop a recorded .mcap log into the board's data/ folder" }],
+  "frontend": "index.tsx",
+  "backend": "adapter.ts",
+  "test": "plugin.test.ts",
+  "permissions": { "network": false }
+}

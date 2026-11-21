@@ -1,0 +1,26 @@
+{
+  "name": "@wb/sidecar",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch --clear-screen=false src/index.ts",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@foxglove/rosmsg": "^5.0.5",
+    "@foxglove/rosmsg2-serialization": "^3.1.2",
+    "@mcap/core": "^2.4.0",
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "@typescript-eslint/parser": "^8.73.0",
+    "@wb/sdk": "*",
+    "chokidar": "^6.0.0",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.15.0",
+    "ws": "^8.23.0",
+    "zod": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.2"
+  }
+}

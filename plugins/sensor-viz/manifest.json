@@ -1,0 +1,9 @@
+{
+  "name": "sensor-viz",
+  "version": "1.0.0",
+  "description": "Draws live sensor streams onto the robot: lidar points in 3D, wheels turning from encoder ticks, IMU tilt on the chassis, and the camera feed in a panel.",
+  "adds": { "shapes": [], "panels": ["camera"], "tools": ["show_sensors", "show_camera", "hide_sensors"], "dataSources": [] },
+  "requires": [{ "type": "mcap", "topics": ["/lidar", "/left_encoder", "/right_encoder", "/imu", "/camera"], "hint": "drop an MCAP with /lidar, /left_encoder, /right_encoder, /imu and /camera into data/" }],
+  "frontend": "index.tsx",
+  "test": "plugin.test.ts"
+}

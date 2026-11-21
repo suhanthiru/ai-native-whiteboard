@@ -1,0 +1,9 @@
+{
+  "name": "wb-plugin-explainer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "katex": "^0.19.1"
+  }
+}

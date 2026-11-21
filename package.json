@@ -1,0 +1,32 @@
+{
+  "name": "ai-native-whiteboard",
+  "private": true,
+  "type": "module",
+  "workspaces": ["packages/sdk", "app", "sidecar"],
+  "scripts": {
+    "dev": "concurrently -k -n web,side \"npm:dev:web\" \"npm:dev:sidecar\"",
+    "dev:web": "npm run dev -w app",
+    "dev:sidecar": "npm run dev -w sidecar",
+    "tauri": "node scripts/tauri.mjs",
+    "app": "node scripts/tauri.mjs dev",
+    "build": "npm run build -w app",
+    "test": "vitest run",
+    "test:cov": "vitest run --coverage",
+    "e2e": "playwright test",
+    "typecheck": "tsc -p packages/sdk && tsc -p sidecar && tsc -p app",
+    "make:demo": "tsx scripts/make-demo-robot.ts && tsx scripts/make-demo-mcap.ts",
+    "plugins:install": "tsx scripts/install-plugins.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@tauri-apps/cli": "^2.12.6",
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^5.1.1",
+    "concurrently": "^10.0.7",
+    "jpeg-js": "^0.4.4",
+    "jsdom": "^31.0.1",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.0",
+    "vitest": "^5.1.1"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "title": "POMDP: acting when you cannot see the state",
+  "kinds": {
+    "state": { "shape": "circle", "color": "state", "name": "state" },
+    "action": { "shape": "diamond", "color": "action", "name": "action" },
+    "observation": { "shape": "rounded", "color": "observation", "name": "observation" },
+    "reward": { "shape": "pill", "color": "reward", "name": "reward" },
+    "belief": { "shape": "circle", "color": "belief", "name": "belief" }
+  },
+  "nodes": [
+    { "id": "s0", "kind": "state", "label": "s", "x": 2, "y": 3 },
+    { "id": "a0", "kind": "action", "label": "a", "x": 4, "y": 1.2 },
+    { "id": "s1", "kind": "state", "label": "s′", "x": 6, "y": 3 },
+    { "id": "o1", "kind": "observation", "label": "o", "x": 8.2, "y": 3 },
+    { "id": "r0", "kind": "reward", "label": "r", "x": 4, "y": 4.8 },
+    { "id": "b0", "kind": "belief", "label": "b", "x": 2, "y": 1.2 },
+    { "id": "b1", "kind": "belief", "label": "b′", "x": 8.2, "y": 1.2 }
+  ],
+  "edges": [
+    { "id": "t", "from": "s0", "to": "s1", "label": "T(s′|s,a)", "color": "transition" },
+    { "id": "as", "from": "a0", "to": "s1", "color": "action" },
+    { "id": "obs", "from": "s1", "to": "o1", "label": "O(o|s′)", "color": "observation" },
+    { "id": "sr", "from": "s0", "to": "r0", "color": "reward" },
+    { "id": "ar", "from": "a0", "to": "r0", "label": "R(s,a)", "color": "reward" },
+    { "id": "pi", "from": "b0", "to": "a0", "label": "π(b)", "color": "action" },
+    { "id": "bb", "from": "b0", "to": "b1", "color": "belief", "dashed": true },
+    { "id": "ob", "from": "o1", "to": "b1", "color": "observation", "dashed": true }
+  ],
+  "groups": [{ "id": "hidden", "label": "hidden from the robot", "members": ["s0", "s1"] }],
+  "equations": [{ "id": "update", "tex": "b'(s') \\propto O(o \\mid s') \\sum_{s} T(s' \\mid s, a)\\, b(s)", "x": 5.6, "y": 5.4 }],
+  "steps": [
+    { "caption": "The world is in some state s. The robot cannot see it directly.", "add": ["s0"], "highlight": ["s0"] },
+    { "caption": "The robot takes an action a.", "add": ["a0"], "highlight": ["a0"] },
+    { "caption": "The state changes to s′. The transition model T(s′|s,a) says how likely each next state is.", "add": ["s1", "t", "as"], "highlight": ["t"] },
+    { "caption": "Both states are hidden. That is the “partially observable” part.", "add": ["hidden"], "highlight": ["hidden"] },
+    { "caption": "Instead, it gets an observation o, drawn from the observation model O(o|s′).", "add": ["o1", "obs"], "highlight": ["o1"] },
+    { "caption": "Each step also earns a reward R(s,a). The goal is to collect as much as possible over time.", "add": ["r0", "sr", "ar"], "highlight": ["r0"] },
+    { "caption": "Since s is hidden, the robot keeps a belief b: a probability for every possible state.", "add": ["b0"], "highlight": ["b0"] },
+    { "caption": "After acting and observing, it updates the belief to b′ with Bayes’ rule.", "add": ["b1", "bb", "ob", "update"], "highlight": ["update", "b1"] },
+    { "caption": "A policy π chooses the next action from the belief, not from the hidden state.", "add": ["pi"], "highlight": ["pi", "b0"] }
+  ]
+}
